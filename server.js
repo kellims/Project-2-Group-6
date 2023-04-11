@@ -1,9 +1,14 @@
 //Dependencies
+
+//I think we'll need this as well below?
+//require('dotenv').config();
+
 const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 const port = 4000;
 const methodOverride = require('method-override');
+
 const recipeController = require('./controllers/Recipe');
 
 //Middleware
@@ -16,6 +21,13 @@ app.use(methodOverride('_method'));
 
 app.get('/', (req, res) => {
     res.send('Hello, world!');
+});
+
+
+app.use('/recipe', recipeController);
+
+app.get('*/', (req, res) => {
+    res.render('404.ejs');
 });
 
 

@@ -2,8 +2,10 @@ const express = require('express');
 const router = express.Router();
 //I don't think we need the port in our controllers if we're already listening in the .env or server.js files?
 // const port = 4000;
+
 //does recipes need to be capitalized?
 let { recipes } = require('../models');
+
 // Homepage Route - Would we want to put this in our server.js?
 router.get('/homepage', (req, res) => {
     res.render('info/homepage.ejs')
@@ -22,6 +24,8 @@ router.get('/', async (req, res, next) => {
 router.get('/new', (req, res) => {
     res.render('/recipe/new.ejs')
 });
+
+
 router.get("/:id", async (req, res, next) => {
     try {
         const myRecipe = await recipes.findById(req.params.id);
@@ -29,8 +33,9 @@ router.get("/:id", async (req, res, next) => {
     } catch(err) {
         console.log(err);
         next();
-    }
+    }    
 });
+
 //Might need to change the redirect based on what we decide on homepage vs. user account hoomepage
 router.post('', async (req, res, next) => {
     try{
@@ -41,6 +46,8 @@ router.post('', async (req, res, next) => {
         next();
     }
 });
+
+
 //Edit route w/ redirect to updated show page
 router.get('/:id/edit', async (req, res, next) => {
     try {
@@ -60,7 +67,10 @@ router.put('/:id', async (req, res, next) => {
         next();
     }
 });
+
 //What additional routes will we need to add?
-//remove? Would we do this after we were able to create a favorites list/add favorite?
-//Search results page?
+//remove? Would we do this after we were able to create a favorites list/add favorite? 
+//Search results page? 
+
+
 module.exports = router;

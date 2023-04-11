@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs', { title: "Home Page | KitchenConnect"}) %>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <section class="hero">
+          <h1>Welcome to KitchenConnect</h1>
+          <p>Discover, create, and share delicious recipes from around the world.</p>
+          <a href="recipe/signup" class="cta-button">Join us today!</a>
+        </section>
+
+        <section class="search">
+          <h2>Find Your Perfect Recipe</h2>
+          <form action="/search" method="get" class="search-form">
+            <input type="text" name="query" placeholder="Search for recipes..." required>
+            <button type="submit">Search</button>
+          </form>
+        </section>
+
+        <section class="featured-recipes">
+          <h2>Featured Recipes</h2>
+          <div class="recipe-grid">
+            <!-- Recipe Card 1 -->
+            <div class="recipe-card">
+              <img src="path/to/recipe-image1.jpg" alt="Recipe image 1">
+              <div class="recipe-info">
+                <h3>Recipe Name 1</h3>
+                <p>Short description of the first recipe...</p>
+                <div class="recipe-rating">4.5 stars</div>
+              </div>
+            </div>
+          
+            <!-- Recipe Card 2 -->
+            <div class="recipe-card">
+              <img src="path/to/recipe-image2.jpg" alt="Recipe image 2">
+              <div class="recipe-info">
+                <h3>Recipe Name 2</h3>
+                <p>Short description of the second recipe...</p>
+                <div class="recipe-rating">4 stars</div>
+              </div>
+            </div>
+          
+            <!-- Recipe Card 3 -->
+            <div class="recipe-card">
+              <img src="path/to/recipe-image3.jpg" alt="Recipe image 3">
+              <div class="recipe-info">
+                <h3>Recipe Name 3</h3>
+                <p>Short description of the third recipe...</p>
+                <div class="recipe-rating">4.7 stars</div>
+              </div>
+            </div>
+          
+            <!-- Recipe Card 4 -->
+            <div class="recipe-card">
+              <img src="path/to/recipe-image4.jpg" alt="Recipe image 4">
+              <div class="recipe-info">
+                <h3>Recipe Name 4</h3>
+                <p>Short description of the fourth recipe...</p>
+                <div class="recipe-rating">5 stars</div>
+              </div>
+            </div>
+          </div>
+        </section>
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>
