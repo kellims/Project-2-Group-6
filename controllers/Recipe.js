@@ -71,5 +71,9 @@ router.put('/:id', async (req, res, next) => {
     }
 });
 
+//What additional routes will we need to add?
+//remove? Would we do this after we were able to create a favorites list/add favorite? 
+//Search results page? 
+
 
 module.exports = router;
