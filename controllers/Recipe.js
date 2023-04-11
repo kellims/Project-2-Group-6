@@ -10,7 +10,6 @@ let { recipes } = require('../models');
 router.get('/homepage', (req, res) => {
     res.render('info/homepage.ejs')
 });
-
 //If we have "homepage" above, would be want to have our controller be the start of the user's pages?
 router.get('/', async (req, res, next) => {
     try {
@@ -21,7 +20,6 @@ router.get('/', async (req, res, next) => {
         return next();
     }
 });
-
 //Add New Recipes (Need to decide on our /route for server.js. For now it's /recipe)
 router.get('/new', (req, res) => {
     res.render('/recipe/new.ejs')
@@ -60,7 +58,6 @@ router.get('/:id/edit', async (req, res, next) => {
         next()
     }
 });
-
 router.put('/:id', async (req, res, next) => {
     try {
         const updatedRecipe = await recipe.findByIdAndUpdate(req.params.id, req.body);
