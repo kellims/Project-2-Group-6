@@ -9,7 +9,7 @@ const app = express();
 const port = 4000;
 const methodOverride = require('method-override');
 
-const recipeController = require('./controllers/Recipe');
+const recipeController = require('./controllers/recipe');
 
 //Middleware
 app.use(express.urlencoded({ extended: true}));
