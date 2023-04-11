@@ -21,4 +21,9 @@ app.get('/', (req, res) => {
 
 app.use('/recipe', recipeController);
 
+app.get('*/', (req, res) => {
+    res.render('404.ejs');
+});
+
+
 app.listen(port, () => console.log(`Listening for client requests on port ${port}`));
