@@ -19,6 +19,6 @@ app.get('/', (req, res) => {
 });
 
 
-
+app.use('/recipe', recipeController);
 
 app.listen(port, () => console.log(`Listening for client requests on port ${port}`));
