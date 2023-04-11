@@ -13,7 +13,7 @@ router.get('/homepage', (req, res) => {
 router.get('/', async (req, res, next) => {
     try {
         let myRecipes = await recipes.find({});
-        return res.render('red_wine/index.ejs', {recipe: myRecipes});
+        return res.render('recipes/index.ejs', {recipe: myRecipes});
     } catch(err){
         console.log(err);
         return next();
@@ -24,5 +24,30 @@ router.get('/', async (req, res, next) => {
 router.get('/new', (req, res) => {
     res.render('/recipe/new.ejs')
 });
+
+
+router.get("/:id", async (req, res, next) => {
+    try {
+        const myRecipe = await recipes.findById(req.params.id);
+        res.render("recipes/show.ejs", {recipe: myRecipe})
+    } catch(err) {
+        console.log(err);
+        next();
+    }    
+});
+
+//Might need to change the redirect based on what we decide on homepage vs. user account hoomepage
+router.post('', async (req, res, next) => {
+    try{
+        let newRecipe = await recipes.create(req.body);
+        res.redirect('/recipe');
+    } catch(err) {
+        console.log(err);
+        next();
+    }
+});
+
+
+
 
 module.exports = router;
