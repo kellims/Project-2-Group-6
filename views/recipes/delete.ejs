@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs', { title: "Delete Recipe | KitchenConnect"}) %>
+<body>
+    <%- include('../partials/header.ejs') %>
+
+    <main>
+        <section class="delete-section">
+          <h1>Delete Recipe</h1>
+          <p>Are you sure you want to delete the following recipe?</p>
+          <h2><%= recipe.title %></h2>
+          <div class="delete-actions">
+            <form class="delete-form" method="POST" action="/recipes/delete/<%= recipe._id %>?_method=DELETE">
+                <button type="submit" class="delete-btn">Yes, Delete</button>
+            </form>
+            <a href="/recipes/<%= recipe._id %>">Cancel</a>
+          </div>
+        </section>
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

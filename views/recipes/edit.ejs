@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs', { title: "Edit the recipe}) %>
+    <body>
+        <%- include("../partials/header.ejs") %>
+        <main>
+        <div>
+            <form action="/recipes/<%= recipe._id %>?_method=PUT" method="post">
+            <fieldset>
+                <legend>Edit a <%= recipe.title %></legend>
+                <label>
+                Image:<input
+                    type="text"
+                    name="title"
+                    value="<%= recipe.title %>"
+                    placeholder="enter recipe title."
+                    />
+                    </label>
+                <label>
+                Title:<input
+                    type="text"
+                    name="title"
+                    value="<%= recipe.title %>"
+                    placeholder="enter recipe title."
+                />
+                </label>
+                <label>
+                Author:<input
+                    type="text"
+                    name="author"
+                    value="<%= recipe.author %>"
+                    placeholder="enter recipe author."
+                />
+                </label>
+            </fieldset>
+            <input type="submit" value="Update <%= recipe.title %>" />
+            </form>
+        </div>
+        </main>
+        <%- include('../partials/footer.ejs') %>
+    </body>
+</html>
