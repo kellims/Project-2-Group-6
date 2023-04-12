@@ -6,8 +6,56 @@ const router = express.Router();
 //does recipes need to be capitalized?
 let { recipes } = require('../models');
 
+const seededRecipes = [
+    {
+        author: "Test One",
+        title: "Title One",
+        ingredients: "one",
+        nutrients: "nutrients one",
+        cookingTime: "5 minutes",
+        instructions: "Cooking One",
+        measurement: "Measurement One",
+        image: "Enter Image Here",
+        category: "Category One",
+        authorUser: "User One"
+    }, {
+        author: "Test Two",
+        title: "Title Two",
+        ingredients: "two",
+        nutrients: "nutrients Two",
+        cookingTime: "10 minutes",
+        instructions: "Cooking Two",
+        measurement: "Measurement Two",
+        image: "Enter Image Here",
+        category: "Category Two",
+        authorUser: "User Two"
+    }, {
+        author: "Test Three",
+        title: "Title Three",
+        ingredients: "three",
+        nutrients: "nutrients Three",
+        cookingTime: "15 minutes",
+        instructions: "Cooking Three",
+        measurement: "Measurement Three",
+        image: "Enter Image Here",
+        category: "Category Three",
+        authorUser: "User Three"
+    }, {
+        author: "Test Four",
+        title: "Title Four",
+        ingredients: "four",
+        nutrients: "nutrients Four",
+        cookingTime: "20 minutes",
+        instructions: "Cooking Four",
+        measurement: "Measurement Four",
+        image: "Enter Image Here",
+        category: "Category Four",
+        authorUser: "User Four"
+    }
+]
 
-//If we have "homepage" above, would be want to have our controller be the start of the user's pages?
+
+
 router.get('/', async (req, res, next) => {
     try {
         let myRecipes = await recipes.find({});
@@ -21,6 +69,17 @@ router.get('/', async (req, res, next) => {
 router.get('/new', (req, res) => {
     res.render('recipes/new.ejs')
 });
+
+router.get('/seed', async (req, res, next) => {
+    try {
+        await recipes.deleteMany({});
+        await recipes.insertMany(seededRecipes);
+        res.redirect('/recipe');
+    } catch(err) {
+        console.log(err);
+        next();
+    }
+})
 
 
 router.get("/:id", async (req, res, next) => {
