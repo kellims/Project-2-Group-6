@@ -23,6 +23,13 @@ app.get('/', (req, res) => {
     res.send('Hello, world!');
 });
 
+router.get('/homepage', (req, res) => {
+    res.render('info/homepage.ejs')
+});
+
+router.get('/about', (req, res) => {
+    res.render('Info/about.ejs')
+});
 
 app.use('/recipe', recipeController);
 
