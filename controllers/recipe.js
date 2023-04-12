@@ -22,7 +22,7 @@ router.get('/', async (req, res, next) => {
 });
 //Add New Recipes (Need to decide on our /route for server.js. For now it's /recipe)
 router.get('/new', (req, res) => {
-    res.render('/recipe/new.ejs')
+    res.render('recipes/new.ejs')
 });
 
 

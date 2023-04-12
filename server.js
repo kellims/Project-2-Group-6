@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 app.use('/recipe', recipeController);
 
 app.get('*/', (req, res) => {
-    res.render('404.ejs');
+    res.render('./Info/404.ejs');
 });
 
 
