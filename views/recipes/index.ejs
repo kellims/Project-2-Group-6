@@ -1,16 +1,52 @@
-<%- include('../partials/header') %>
-    <div class="row recipe-hero py-4 mb-4">
-        <div class="col-lg-6 order-lg-last">
-            <img src="https://st2.depositphotos.com/3889193/7173/i/450/depositphotos_71739083-stock-photo-healthy-vegetarian-home-made-food.jpg" width="607" height="510" class="img-fluid" alt="Recipe Hub">
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs', { title: "Recipes"}) %>
+
+    <body>
+        <div class="row recipe-hero py-4 mb-4">
+            <div class="col-lg-6 order-lg-last">
+                <img src="/images/image_homepage.png" width="607" height="510" class="img-fluid" alt="Kitchen Connect">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="recipe-title mb-3">Discover new flavors with our wide range of recipes!</h1>
+                <p class="recipe-subtitle">Welcome to our recipe website, where you can find a vast collection of delicious and easy-to-follow recipes.</p>
+            </div>
         </div>
-        <div class="col-lg-6">
-            <h1 class="recipe-title mb-3">Discover new flavors with our wide range of recipes!</h1>
-            <p class="recipe-subtitle">Welcome to our recipe website, where you can find a vast collection of delicious and easy-to-follow recipes.</p>
-        </div>
-    </div>
-    <section>
-        <main>
-        </main>
-        <br /><br />
-    </section>
-    <%- include('../partials/footer') %>
+
+        <section>
+            <main>
+                <div>
+                    <h1>Best Recipes</h1>
+                </div>
+                <div class="cards-index">
+                    <% recipes.forEach((recipe) => { %>
+                        <div class="card" id="<%= recipe._id %>">
+                            <div class="card-image">
+                                <img src="<%= recipe.image %>" alt="" />
+                                <a class="btn-circle waves-effect waves-light red pulse " href=" /recipes/<%=recipe._id %>"><i class="fa fa-search"></i ></a>
+                            </div>
+                            <div class="card-content content">
+                                <h6 class="card-title">
+                                    <%= recipe.title %>
+                                </h6>
+                                <p>
+                                    <%= recipe.author %>
+                                </p>
+                                <p> Cuisine Category:
+                                    <%= recipe.category%>
+                                </p>
+                                <p> Cook Time:
+                                    <%= recipe.cookingTime%> minutes
+                                </p>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+            </main>
+            <br /><br />
+        </section>
+
+        <%- include('../partials/footer.ejs') %>
+    </body>
+
+</html>
