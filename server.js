@@ -23,11 +23,11 @@ app.get('/', (req, res) => {
     res.send('Hello, world!');
 });
 
-router.get('/homepage', (req, res) => {
-    res.render('info/homepage.ejs')
+app.get('/homepage', (req, res) => {
+    res.render('Info/homepage.ejs')
 });
 
-router.get('/about', (req, res) => {
+app.get('/about', (req, res) => {
     res.render('Info/about.ejs')
 });
 
