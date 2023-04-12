@@ -6,10 +6,7 @@ const router = express.Router();
 //does recipes need to be capitalized?
 let { recipes } = require('../models');
 
-// Homepage Route - Would we want to put this in our server.js?
-router.get('/homepage', (req, res) => {
-    res.render('info/homepage.ejs')
-});
+
 //If we have "homepage" above, would be want to have our controller be the start of the user's pages?
 router.get('/', async (req, res, next) => {
     try {
@@ -67,6 +64,27 @@ router.put('/:id', async (req, res, next) => {
         next();
     }
 });
+
+
+router.get('/:id/delete', async (req, res, next) => {
+    try {
+        const recipeToBeDeleted = await recipe.findById(req.params.id);
+        res.render('recipes/delete.ejs', {recipe: recipeToBeDeleted})
+    } catch(err) {
+        console.log(err);
+        next();
+    }
+})
+
+router.delete('/:id', async (req, res) => {
+    try {
+        const deletedRecipe = await recipe.findByIdAndDelete(req.params.id);
+        res.redirect('/recipe');
+    } catch(err) {
+        console.log(err);
+        next();
+    }
+})
 
 //What additional routes will we need to add?
 //remove? Would we do this after we were able to create a favorites list/add favorite? 

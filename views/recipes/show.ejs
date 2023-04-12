@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+    <% if (recipe) { %>
+        <h2>
+            <%= recipe.title %>
+        </h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card" id="<%= recipe._id %>">
+                    <img src="<%= recipe.image %>" class="card-img-top" alt="<%= recipe.title %>">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= recipe.title %>
+                        </h5>
+                        <p>Posted by :
+                            <%= recipe.user.username %>
+                        </p>
+                        <p class="card-text">
+                            <%= recipe.description %>
+                        </p>
+                    </div>
+
+
+
+
+<%- include('../partials/footer') %>
+
+
+
+

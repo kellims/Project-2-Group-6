@@ -49,6 +49,7 @@ Founded in 2023 by a group of food enthusiasts: Mustafa Cevik, Dolores Crazover 
 
 ###### ERD
 
+![newErd](https://user-images.githubusercontent.com/117631390/231324864-aa2d1cf3-9c63-43dd-afee-c631ba0264de.png)
 
 
 
