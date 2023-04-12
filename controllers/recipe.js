@@ -68,6 +68,27 @@ router.put('/:id', async (req, res, next) => {
     }
 });
 
+
+router.get('/:id/delete', async (req, res, next) => {
+    try {
+        const recipeToBeDeleted = await recipe.findById(req.params.id);
+        res.render('recipes/delete.ejs', {recipe: recipeToBeDeleted})
+    } catch(err) {
+        console.log(err);
+        next();
+    }
+})
+
+router.delete('/:id', async (req, res) => {
+    try {
+        const deletedRecipe = await recipe.findByIdAndDelete(req.params.id);
+        res.redirect('/recipe');
+    } catch(err) {
+        console.log(err);
+        next();
+    }
+})
+
 //What additional routes will we need to add?
 //remove? Would we do this after we were able to create a favorites list/add favorite? 
 //Search results page? 
