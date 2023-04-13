@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+/* header*/
+
+.logo {
+  position: absolute;
+  top: 0.5px;
+  left: 20px;
+  width: 200px;
+} 
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 30px 20px;
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px; /* thickness of the line */
+  background: rgb(205, 5, 5);
+  position: absolute;
+  bottom: -5px; /* space between the text and the line */
+  left: 0;
+  transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+.row-recipe-hero-py-4-mb-4 {
+  width: 90%;
+  height: auto;
+  max-width:1200px;
+  margin: 0 auto;
+}
+
+.col-lg-6-order-lg-last {
+  width: 100%;
+  height: 300px; /* Adjust the height of the banner */
+  background-image: url('https://st2.depositphotos.com/3889193/7173/i/450/depositphotos_71739083-stock-photo-healthy-vegetarian-home-made-food.jpg'); 
+  background-size: cover;
+  background-position: center;
+  margin-top: 15rem; 
+  margin-bottom: 3rem;
+}
+
+.col-lg-6 {
+  margin-bottom: 3rem;
+}
+
+.col-lg-6 h1 {
+  font-size: 40px;
+  margin-bottom: 1rem;
+  color:black;
+}
+.col-lg-6 p {
+  font-size: 20px;
+  color:black;
+}
+/*Index Page*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+img {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+}
+body {
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  color: white;
+}
+
+
+section {
+  background-color: white;
+  padding:100px 0;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.search-container {
+  width: 90%;
+  height: auto;
+  max-width:1200px;
+  margin: 0 auto;
+  margin-top: -100px;
+}
+
+form {
+  width: 90%;
+  max-width: 400px;
+  margin: 20px auto;
+  background-color: white;
+  border-color: black;
+  border-style: solid; /* to see the border add border-style */
+  border-width: 1px; /* and border-width */
+  border-radius: 4px;
+}
+
+form input {
+  width: 90%;
+  background-color: transparant;
+  padding: 10px;
+  border:none;
+  font-size: none;
+  font-size: 1.5rem;
+  display: inline-block;
+}
+
+.search-icon {   /* https://ionic.io/ionicons  and   https://ionic.io/ionicons/usage */
+  width: 10%;
+  font-size: 3rem;
+  margin: -16px;
+  color: grey;
+}
+
+.search-result {
+  /* background-color: black; */
+  margin-top: 50px;
+  width: 100%;
+  /* border-radius: 8px; */
+  /* padding:15px;
+  overflow: hidden; */
+  display: grid;
+  grid-gap: 25px;
+  grid-template: auto / repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.element .flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.element {
+  width: 100%;
+  border-radius: 8px;
+  background-color: rgb(8, 3, 70);
+  padding: 15px;
+  overflow: hidden;
+}
+
+.element img { /* PB PB*/
+  width: 100%;
+  height: 300px;
+  border-radius: 4px;
+}  
+
+
+.search-result .title {
+  color: white;
+  margin: 20px 10px 0 0;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+#view-button {
+  text-decoration: none;
+  text-align: center;
+  width: 130px;
+  padding: 10px 0;
+  background-color: white;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 20px;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+.element-data-1, .element-data-2, .element-data-3 {
+  color: white;
+  display: block;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  letter-spacing: 0.05rem;
+  line-height: 1rem;
+}
+
+@media (max-width: 768px) {
+  .search-result {
+    grid-gap: 10px;
+  }
+}
+
+.footer-copyright {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.footer-container {
+  background-color: rgb(8, 3, 70);
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-links ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin: 0 10px;
+}
+
+.footer-links ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    z-index: 1000;
+    position: relative;
+    background-color: rgb(8, 3, 70);
+    color: white;
+    padding: 20px 0;
+  }
+
+  .footer-links {
+    margin-bottom: 10px;
+  }
+}
