@@ -284,8 +284,8 @@ label {
     margin-bottom: 1rem;
 }
     
-input[type="text"], textarea {
-    padding: 10px 20px;
+input[type="text"], textarea { /* make it tranparent or bigger or different for the new page */
+    padding: 20px 20px;
     margin-bottom: 20px;
     border-radius: 5px;
     border: none;
