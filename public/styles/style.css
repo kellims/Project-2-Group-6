@@ -75,6 +75,20 @@ nav ul li a:hover::after {
   font-size: 20px;
   color:black;
 }
+
+/* Homepage*/
+
+.hero h1 { 
+    color: black;
+    text-align: center;
+  }
+  
+  .hero p { 
+    color: black;
+    text-align: center;
+  }
+
+
 /*Index Page*/
 
 * {
