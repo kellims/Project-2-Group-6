@@ -222,68 +222,25 @@ form input {
   }
 }
 
-.footer-copyright {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  color: black;
-  padding: 20px;
-  text-align: center;
-  font-size: 12px;
-}
-
 .footer-container {
-  background-color: rgb(8, 3, 70);
-  padding: 20px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer-links ul {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-links ul li {
-  margin: 0 10px;
-}
-
-.footer-links ul li a {
-  color: white;
-  text-decoration: none;
-}
-
-.footer-links ul li a:hover {
-  text-decoration: underline;
-}
-
-.footer-copyright {
-  color: white;
-  text-align: center;
-  font-size: 12px;
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .footer-container {
-    z-index: 1000;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
     background-color: rgb(8, 3, 70);
+  }
+  
+  .footer-container p {
+    text-align: center;
     color: white;
-    padding: 20px 0;
   }
 
-  .footer-links {
-    margin-bottom: 10px;
+/* New Page */
+
+#image-happy-cookers {
+    width: 800px;
+    height: 460px;
+    margin-left: 50%;
+    margin-bottom: -30%;
+    border-radius: 4px;
   }
-}

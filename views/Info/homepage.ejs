@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head.ejs', { title: "Home Page | KitchenConnect"}) %>
+<%- include('../partials/head.ejs', { title: "Homepage | KitchenConnect"}) %>
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
@@ -10,11 +10,10 @@
           <a href="recipe/signup" class="cta-button">Join us today!</a>
         </section>
 
-        <section class="search">
-          <h2>Find Your Perfect Recipe</h2>
-          <form action="/search" method="get" class="search-form">
-            <input type="text" name="query" placeholder="Search for recipes..." required>
-            <button type="submit">Search</button>
+        <div class="search-container">
+          <form id="search-form">
+              <input type="text" placeholder="Search For Your Recipe...">
+              <ion-icon name="search-circle" class="search-icon"></ion-icon>
           </form>
         </section>
 
@@ -65,5 +64,7 @@
     </main>
 
     <%- include('../partials/footer.ejs') %>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
