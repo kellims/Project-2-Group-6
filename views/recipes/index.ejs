@@ -6,7 +6,9 @@
         <div class="row recipe-hero py-4 mb-4">
             <div class="col-lg-6 order-lg-last">
                 <img src="/images/image_homepage.png" width="607" height="510" class="img-fluid" alt="Kitchen Connect">
+      
             </div>
+          
             <div class="col-lg-6">
                 <h1 class="recipe-title mb-3">Discover new flavors with our wide range of recipes!</h1>
                 <p class="recipe-subtitle">Welcome to our recipe website, where you can find a vast collection of delicious and easy-to-follow recipes.</p>
@@ -18,12 +20,17 @@
                 <div>
                     <h1>Best Recipes</h1>
                 </div>
+                <div class='newrecipe'>
+                    <h3>new recipe </br>
+                        <a href=“/recipe/new">Add new Recipe</a></h3>
+                  </div>
                 <div class="cards-index">
                     <% recipe.forEach((recipe) => { %>
                         <div class="card" id="<%= recipe._id %>">
                             <div class="card-image">
                                 <img src="<%= recipe.image %>" alt="" />
                                 <a class="btn-circle waves-effect waves-light red pulse " href=" /recipes/<%=recipe._id %>"><i class="fa fa-search"></i ></a>
+                                    
                             </div>
                             <div class="card-content content">
                                 <h6 class="card-title">
