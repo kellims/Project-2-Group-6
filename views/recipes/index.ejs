@@ -1,59 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head.ejs', { title: "Recipes"}) %>
+<%- include('../partials/head.ejs', { title: "Home Page | KitchenConnect" }) %>
 
     <body>
-        <div class="row recipe-hero py-4 mb-4">
-            <div class="col-lg-6 order-lg-last">
-                <img src="/images/image_homepage.png" width="607" height="510" class="img-fluid" alt="Kitchen Connect">
-      
-            </div>
-          
-            <div class="col-lg-6">
-                <h1 class="recipe-title mb-3">Discover new flavors with our wide range of recipes!</h1>
-                <p class="recipe-subtitle">Welcome to our recipe website, where you can find a vast collection of delicious and easy-to-follow recipes.</p>
-            </div>
-        </div>
-
-        <section>
-            <main>
-                <div>
-                    <h1>Best Recipes</h1>
+        <%- include('../partials/header') %>
+            <div class="row-recipe-hero-py-4-mb-4">
+                <div class="col-lg-6-order-lg-last">
+                    <img src="./images/image_banner_index.jpeg" width="607" height="510" class="img-fluid"
+                        alt="KitchenConnect">
                 </div>
-                <div class='newrecipe'>
-                    <h3>new recipe </br>
-                        <a href='/recipe/new'>Add new Recipe</a></h3>
-                  </div>
-                <div class="cards-index">
-                    <% recipe.forEach((recipe) => { %>
-                        <div class="card" id="<%= recipe._id %>">
-                            <div class="card-image">
-                                <img src="<%= recipe.image %>" alt="" />
-                                <a class="btn-circle waves-effect waves-light red pulse " href=" /recipes/<%=recipe._id %>"><i class="fa fa-search"></i ></a>
-                                    
+                <div class="col-lg-6">
+                    <h1 class="recipe-title mb-3">Discover new flavors with our wide range of recipes!</h1>
+                    <p class="recipe-subtitle">Welcome to our recipe website, where you can find a vast collection of
+                        delicious and easy-to-follow recipes.</p>
+                </div>
+            </div>
+            <section>
+                <main>
+                    <div class="search-container">
+                        <form id="search-form">
+                            <input type="text" placeholder="Search For Your Recipe...">
+                            <ion-icon name="search-circle" class="search-icon"></ion-icon>
+                        </form>
+                        <div class=search-result>
+                            <div class="element">
+                                <img src="./images/image_index.jpeg" alt="meal with salmon">
+                                <div class="flex-container">
+                                    <h1 class="title">This is a recipe</h1>
+                                    <a id=view-button href="#">View Recipe</a>
+                                </div>
+                                <p class="element-data-1">Nutriments: Glucids, proteins, Fer</p>
+                                <p class="element-data-2">Cuisine Type: American</p>
+                                <p class="element-data-3">Calories: 160</p>
                             </div>
-                            <div class="card-content content">
-                                <h6 class="card-title">
-                                    <%= recipe.title %>
-                                </h6>
-                                <p>
-                                    <%= recipe.author %>
-                                </p>
-                                <p> Cuisine Category:
-                                    <%= recipe.category%>
-                                </p>
-                                <p> Cook Time:
-                                    <%= recipe.cookingTime%> minutes
-                                </p>
+
+                            <div class="element">
+                                <img src="./images/image_index.jpeg" alt="meal with salmon">
+                                <div class="flex-container">
+                                    <h1 class="title">This is a recipe</h1>
+                                    <a id=view-button href="#">View
+                                        Recipe</a>
+                                </div>
+                                <p class="element-data-1">Nutriments: Glucids, proteins, Fer</p>
+                                <p class="element-data-2">Cuisine Type: American</p>
+                                <p class="element-data-3">Calories: 160</p>
+                            </div>
+                            <div class="element">
+                                <img src="./images/image_index.jpeg" alt="meal with salmon">
+                                <div class="flex-container">
+                                    <h1 class="title">This is a recipe</h1>
+                                    <a id=view-button href="#">View Recipe</a>
+                                </div>
+                                <p class="element-data-1">Nutriments: Glucids, proteins, Fer</p>
+                                <p class="element-data-2">Cuisine Type: American</p>
+                                <p class="element-data-3">Calories: 160</p>
                             </div>
                         </div>
-                        <% }) %>
-                </div>
-            </main>
-            <br /><br />
-        </section>
-
-        <%- include('../partials/footer.ejs') %>
+                    </div>
+                </main>
+                <br /><br />
+            </section>
+            <%- include('../partials/footer') %>
+                <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+                <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
 
 </html>
