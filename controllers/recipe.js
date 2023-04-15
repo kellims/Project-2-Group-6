@@ -118,7 +118,7 @@ router.get('/:id/edit', async (req, res, next) => {
 router.put('/:id', async (req, res, next) => {
     try {
         const updatedRecipe = await recipes.findByIdAndUpdate(req.params.id, req.body);
-        res.redirect(`/recipes/${req.params.id}`)
+        res.redirect(`/recipe/${req.params.id}`)
     } catch(err) {
         console.log(err);
         next();
