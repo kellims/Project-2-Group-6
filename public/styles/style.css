@@ -104,7 +104,7 @@ img {
 body {
   font-family: Montserrat, sans-serif;
   font-size: 13px;
-  color: white;
+  
 }
 
 
@@ -237,11 +237,10 @@ form input {
 
 /* New Page */
 
-
 .newpage-container-image {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 50px;
 }
     
 #image-happy-cookers {
@@ -284,7 +283,7 @@ label {
     margin-bottom: 1rem;
 }
     
-input[type="text"], textarea { /* make it tranparent or bigger or different for the new page */
+.input-text, textarea { /* make it tranparent or bigger or different for the new page */
     padding: 20px 20px;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -312,11 +311,12 @@ input[type="submit"] {
     padding: 10px 20px;
     font-size: 1.1em;
     border-radius: 5px;
-    cursor: pointer;
-    
+    cursor: pointer; 
     
 }
     
 input[type="submit"]:hover {
     background-color: #3e8e41;
 }
+
+/* 404 Page */
