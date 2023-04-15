@@ -38,7 +38,7 @@
                     <input type="text" value="<%= recipe.cookingTime %>" name="cookingTime" placeholder="Add cooking time." class="input-text">
                     <br>
                     <label for="ingredients">Ingredients:</label>
-                    <input type="text" value="<%= recipe.ingredients %>" name="ingredients" placeholder="Add the ingredients." class="input-text">
+                    <textarea value="<%= recipe.ingredients %>" name="ingredients" id="ingredients-textarea" placeholder="Enter the recipe ingredients."><%= recipe.ingredients %></textarea>
                     <br>
                     <label for="instructions">Instructions:</label>
                     <textarea value="<%= recipe.instructions %>" name="instructions" id="instructions-textarea" placeholder="Enter the recipe instructions."><%= recipe.instructions %></textarea>

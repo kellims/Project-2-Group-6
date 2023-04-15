@@ -449,6 +449,8 @@ form input {
 
 .newpage-container-image {
     display: flex;
+    flex-direction: row;
+    margin-right: 74rem;
     justify-content: center;
     margin-top: 50px;
 }
@@ -514,6 +516,10 @@ textarea {
     height: 300px;
   }
 
+  .input-container-add-Recipe {
+    margin-left: 40px;
+    flex-direction: row;
+  }
 
 input[type="submit"] {
     background-color: rgb(8, 3, 70);
@@ -615,5 +621,10 @@ input[type="submit"]:hover {
 
 #form-part {
   margin-right: 175px;
+  flex-direction: row;
+}
+
+.input-container-save-edit-changes {
+  margin-left: 40px;
   flex-direction: row;
 }
