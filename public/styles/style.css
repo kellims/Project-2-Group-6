@@ -569,3 +569,35 @@ input[type="submit"]:hover {
   font-size: 2rem;
   /* text-decoration: none; */
 }
+
+/* Edit Page*/
+
+.main-container-editP {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#image-happy-cookers {
+  width: 90%; 
+  margin-left: auto;
+  margin-top: 7rem;
+  margin-right: 3rem; 
+  
+}
+
+#main-heading-editpage {
+  font-size: 50px; 
+  margin-top: 5rem;
+  margin-bottom: -3rem;
+}
+
+#sub-heading-editpage {
+  font-size: 24px; 
+  font-weight: normal; 
+  margin-bottom: 5px; 
+  text-align: center;
+  margin-top: 2rem;
+  color: rgb(205, 5, 5);
+}
+
