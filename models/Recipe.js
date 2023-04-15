@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+
+const user = require('./User');
+
 const recipeSchema = new mongoose.Schema({
     author: {
         type: String,
@@ -18,31 +21,30 @@ const recipeSchema = new mongoose.Schema({
         required: true
     },
     cookingTime: {
-        type: String, //number feature nice way
+        type: String, //number feature
         trim: true,
     },
     instructions: {
         type: String,
         required: true
     },
-    measurement: {
+    calories: {
         type: String,
         required: true
     },
     image: {
         type: String,
-       // default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/1280px-Good_Food_Display_-_NCI_Visuals_Online.jpg', // edit link 
+        default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/1280px-Good_Food_Display_-_NCI_Visuals_Online.jpg',
     },
     category: {
         type: String,
-        required: true,
-      //  enum: ['American', 'Turkishcusine', 'French', 'Desserts']    // I need to edit this section.
+        required: true
     },
-    authorUser: {
+    user: {
         type: mongoose.Types.ObjectId,
-        ref: 'User'
+        ref: 'user'
     }
 });
 
-const Recipe = mongoose.model('Recipe', recipeSchema);
+const Recipe = mongoose.model('recipe', recipeSchema);
 module.exports = Recipe;

@@ -13,18 +13,18 @@ const reviewSchema = new Schema({
     },
     rating: {
         type: Number,
-        required: true 
+        required: true
     },
-    creatorUser: {
+    user: {
         type: mongoose.Types.ObjectId,
-        ref: 'User'
+        ref: 'user'
     },
     reviewRecipe: {
         type: mongoose.Types.ObjectId,
-        ref: 'Recipe'
+        ref: 'recipe'
     },
 
 });
 
-const Review = mongoose.model('Review', reviewSchema);
+const Review = mongoose.model('review', reviewSchema);
 module.exports = Review;

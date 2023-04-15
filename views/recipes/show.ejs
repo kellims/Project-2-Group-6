@@ -1,74 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head.ejs', { title: "Details of the Recipe"}) %>
+<%- include('../partials/header.ejs', {name: myRecipe.title + " by " + myRecipe.author}) %>
 
     <body>
-        <%- include("../partials/header.ejs") %>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card" id="<%= recipe._id %>">
-                        <img src="<%= recipe.image %>" class="card-img-top" alt="<%= recipe.title %>">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <%= recipe.title %>
-                            </h5>
-                            <p>Posted by :
-                                <%= recipe.author %>
-                            </p>
-                            <p class="card-text">
-                                <%= recipe.description %>
-                            </p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><strong>Category:</strong>
-                                <%= recipe.category %>
-                            </li>
-                            <li class="list-group-item"><strong>Cooking Time:</strong>
-                                <%= recipe.cookingTime %> minutes</li>
-                            <% if(reviews & reviews.length >0){ %>
-                                <li class="list-group-item"><strong>Ratings:</strong>
-                                    <% let totalRatings = 0 %>
-                                        <% reviews.forEach(function(review){ %>
-                                            <% totalRatings += review.rating %>
-                                                <% }) %>
-                                                    <% let avgRating = Math.round((totalRatings/reviews.length) * 10) / 10 %>
-                                                        <%= Array.from({length: avgRating}, (_, i) => i).map((i) => '<i class="bi bi-star-fill"></i>').join('') %>
-                                                            <%= avgRating %> / 5</li>
-                                <% } %>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Ingredients</h5>
-                            <ul class="list-group">
-                                <% recipe.ingredients.forEach(function(ingredients, index){ %>
-                                    <li class="list-group-item">
-                                        <%= ingredients %>
-                                    </li>
-                                    <% }) %>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Nutrients</h5>
-                            <ul class="list-group">
-                                <% recipe.nutrients.forEach(function(nutrients, index){ %>
-                                    <li class="list-group-item">
-                                        <%= nutrients %>
-                                    </li>
-                                    <% }) %>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <%- include('../partials/footer.ejs') %>
+        <h1>Recipe:
+            <%= myRecipe.title %>
+        </h1>
+        <h2>Posted By:
+            <%= myRecipe.author %>
+        </h2>
+        <h2>Description:
+            <%= myRecipe.description %>
+        </h2>
+        <h2> Cooking Time:
+            <%= myRecipe.cookingTime%> Minutes
+        </h2>
+        <h2> Cuisine Type:
+            <%= myRecipe.category%>
+        </h2>
+        <h2> Calories:
+            <%= myRecipe.calories%>
+        </h2>
+        <h2> Ingredients:
+            <ul>
+                <% myRecipe.ingredients.forEach(function(ingredient){ %>
+                    <li class="list-group-item">
+                        <%= ingredient %>
+                    </li>
+                    <% }) %>
+            </ul>
+        </h2>
+        <h2> nutrients:
+            <ul>
+                <% myRecipe.nutrients.forEach(function(nutrient){ %>
+                    <li class="list-group-item">
+                        <%= nutrient %>
+                    </li>
+                    <% }) %>
+            </ul>
+        </h2>
+        <% if(usersRecipe) { %>
+            <a href="/recipes/<%= myRecipe._id %>/edit">Edit your recipe</a>
+            <a href="/recipes/<%= myRecipe._id %>/delete">Delete your recipe</a>
+            <% } %>
+                <form method="POST" action="/recipes/<%= myRecipe._id %>/reviews">
+                    Rating: <input type="text" name="rating"> Review: <input type="text" name="body">
+                    <input type="submit" value="Submit this rating">
+                </form>
+                <% for(let i=0; i < recipeReviews.length; i++) { %>
+                    <h3>Rating:
+                        <%= recipeReviews[i].rating %>
+                    </h3>
+                    <p>Comment:
+                        <%= recipeReviews[i].body %>
+                    </p>
+                    <p>Rating given by:
+                        <%= recipeReviewUsers[i] %>
+                    </p>
+                    <hr>
+                    <% } %>
+                        <%- include('../partials/footer.ejs') %>
     </body>
+
+</html>
 
 </html>
