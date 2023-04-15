@@ -95,6 +95,7 @@ router.get("/:id", async (req, res, next) => {
 //Might need to change the redirect based on what we decide on homepage vs. user account hoomepage
 router.post('', async (req, res, next) => {
     try{
+        console.log(req.body)
         let newRecipe = await recipes.create(req.body);
         res.redirect('/recipe');
     } catch(err) {
