@@ -3,13 +3,15 @@
     <%- include('../partials/head.ejs', { title: "Edit your recipe"}) %>
     <body>
         <%- include('../partials/header.ejs') %>
-        <h1 id="main-heading-editpage">Edit your recipe.</h1>
-        <div class="main-container-image">
-            <img id="image-happy-cookers" src="/images/image_edit_page.jpeg" alt="Asian woman cooking, with a lot of vegetables around her in a kitchen." class="newpage-container-image">
-        </div>
-        <div id="sub-heading-editpage">
-            <h3>You are about to edit your recipe.</h3>
-            <h3>Take your time before validation!</h3>
+        <div class="main-container-editP">
+            <h1 id="main-heading-editpage">Edit Your Recipe</h1>
+            <div class="main-container-image">
+                <img id="image-happy-cookers" src="/images/image_edit_page.jpeg" alt="Asian woman cooking, with a lot of vegetables around her in a kitchen." class="newpage-container-image">
+            </div>
+            <div id="sub-heading-editpage">
+                <h3>You are about to edit your recipe.</h3>
+                <h3>Take your time before validation!</h3>
+            </div>
         </div>
         <section id="editpage">
             <main>
@@ -27,22 +29,22 @@
                     <input  type="text" value="<%= recipe.category %>" name="category" placeholder="Category (e.g. American, French...)" class="input-text">
                     <br>
                     <label for="calories">Calories:</label>
-                    <input type="text" value="<%= recipe.calorie %>" name="calories" placeholder="Add the calories." class="input-text">
+                    <input type="text" value="<%= recipe.calories %>" name="calories" placeholder="Add the calories." class="input-text">
                     <br>
                     <label for="author">Author:</label>
-                    <input  type="text" value="<%= recipe.authorUser %>" name="author" placeholder="Enter the name of the author." class="input-text">
+                    <input  type="text" value="<%= recipe.author %>" name="author" placeholder="Enter the name of the author." class="input-text">
                     <br>
                     <label for="cookingTime">Cooking Time:</label>
                     <input type="text" value="<%= recipe.cookingTime %>" name="cooking Time" placeholder="Add cooking time." class="input-text">
                     <br>
-                    <label for="measurement">Measurement:</label>
-                    <input type="text" value="<%= recipe.measurement %>" name="measurement" placeholder="Add the measurement." class="input-text">
+                    <label for="ingredients">Ingredients:</label>
+                    <input type="text" value="<%= recipe.ingredients %>" name="ingredients" placeholder="Add the ingredients." class="input-text">
                     <br>
                     <label for="instructions">Instructions:</label>
                     <textarea value="<%= recipe.instructions %>" name="instructions" id="instructions-textarea" placeholder="Enter the recipe instructions."></textarea>
                     <br>
                     <div class="input-container-save-edit-changes">
-                        <input type="submit" value="Save Changes <%= recipe.title %>" />
+                        <input type="submit" value="Save Changes" />
                     </div>
                 </form>
             </main>
