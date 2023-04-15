@@ -14,10 +14,18 @@
                     delicious and easy-to-follow recipes.</p>
             </div>
         </div>
+        <br>
+        <div class="addNewRecipe">
+            <form class="addNewRecipe" method="GET" action="/recipe/new">
+                <button  class="AddNewRecipe">Yes, Add New Recipe</button>
+            </form>
 
+            
+            <br>
         <input type="text" id="searchText">
         <a href="/recipe" id="link">
             <button id="searchSubmit">Search Your Favorite Recipes By Name</button>
+
         </a>
 
         <h1> Best Recipes!</h1>
@@ -46,12 +54,13 @@
             <div class="recipe-image">
                 <img src=" <%=recipe[i].image %>" alt="" />
             </div>
-            <h3>Calories: 
+            <h3>Calories:
                 <%= recipe[i].calories %>
             </h3>
-            <h3>Nutrients: 
+            <h3>Nutrients:
                 <%= recipe[i].nutrients %>
             </h3>
+
             <hr>
             <% } %>
 
