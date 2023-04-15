@@ -31,16 +31,7 @@
                         </li>
                         <li class="list-group-item"><strong>Cooking Time:</strong>
                             <%= recipe.cookingTime %> minutes</li>
-                        <% if(reviews & reviews.length >0){ %>
-                            <li class="list-group-item"><strong>Ratings:</strong>
-                                <% let totalRatings = 0 %>
-                                    <% reviews.forEach(function(review){ %>
-                                        <% totalRatings += review.rating %>
-                                            <% }) %>
-                                                <% let avgRating = Math.round((totalRatings/reviews.length) * 10) / 10 %>
-                                                    <%= Array.from({length: avgRating}, (_, i) => i).map((i) => '<i class="bi bi-star-fill"></i>').join('') %>
-                                                        <%= avgRating %> / 5</li>
-                            <% } %>
+                        
                     </ul>
                 </div>
             </div>
@@ -75,7 +66,7 @@
         </div>
 
           <div class="delete-actions">
-            <form class="delete-form" method="POST" action="/recipe/delete/<%= recipe._id %>?_method=DELETE">
+            <form class="delete-form" method="POST" action="/recipe/<%= recipe._id %>?_method=DELETE">
                 <button type="submit" class="delete-btn">Yes, Delete</button>
             </form>
             <a href="/recipe/<%= recipe._id %>">Cancel</a>
