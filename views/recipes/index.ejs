@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/header.ejs', {name: "Best Recipes"}) %>
+<%- include('../partials/header.ejs', {name: "Best Recipes" }) %>
 
     <body>
 
@@ -10,12 +10,13 @@
             </div>
             <div class="col-lg-6">
                 <h1 class="recipe-title mb-3">Discover new flavors with our wide range of recipes!</h1>
-                <p class="recipe-subtitle">Welcome to our recipe website, where you can find a vast collection of delicious and easy-to-follow recipes.</p>
+                <p class="recipe-subtitle">Welcome to our recipe website, where you can find a vast collection of
+                    delicious and easy-to-follow recipes.</p>
             </div>
         </div>
 
         <input type="text" id="searchText">
-        <a href="/recipes" id="link">
+        <a href="/recipe" id="link">
             <button id="searchSubmit">Search Your Favorite Recipes By Name</button>
         </a>
 
@@ -34,29 +35,29 @@
             <p class="element-data-3">Calories: 160</p>
         </div>
 
-  
 
-        <% for(let i = 0; i < 4 ; i++) { %>
-            <a href='recipes/<%= recipes[i]._id %>'>
+
+        <% for(let i=0; i < recipe.length ; i++) { %>
+            <a href='recipe/<%= recipe[i]._id %>'>
                 <h2>Title:
-                    <%= recipes[i].title %>
+                    <%= recipe[i].title %>
                 </h2>
             </a>
             <div class="recipe-image">
-                <img src=" <%=recipes[i].image %>" alt="" />
+                <img src=" <%=recipe[i].image %>" alt="" />
             </div>
             <h3>Calories: $
-                <%= recipes[i].calories %>
+                <%= recipe[i].calories %>
             </h3>
             <h3>Nutrients: $
-                <%= recipes[i].nutrients %>
+                <%= recipe[i].nutrients %>
             </h3>
             <hr>
-            <% } %> 
+            <% } %>
 
-        <%- include('../partials/footer.ejs') %>
-            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+                <%- include('../partials/footer.ejs') %>
+                    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+                    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
 
 </html>
