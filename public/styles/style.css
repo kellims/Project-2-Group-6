@@ -533,7 +533,7 @@ input[type="submit"]:hover {
 /* 404 Page */
 
 #error-page {
-  background-image: url("/images/image_error_page.jpeg"); /*Why my image is not showing*/
+  background-image: url("../images/image_error_page.jpeg"); /*Why my image is not showing*/
   background-position: center;
   background-size: auto;
   background-size: cover; 
