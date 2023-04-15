@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/header.ejs', {name: myRecipe.title + " by " + myRecipe.author}) %>
+<%- include('../partials/header.ejs', {name: recipe.title + " by " + recipe.author}) %>
 
     <body>
 
         <h1>Recipe:
-            <%= myRecipe.title %>
+            <%= recipe.title %>
         </h1>
         <h2>Posted By:
-            <%= myRecipe.author %>
+            <%= recipe.author %>
         </h2>
         <h2>instructions:
-            <%= myRecipe.instructions %>
+            <%= recipe.instructions %>
         </h2>
         <h2> Cooking Time:
-            <%= myRecipe.cookingTime%> Minutes
+            <%= recipe.cookingTime%> Minutes
         </h2>
         <h2> Category:
-            <%= myRecipe.category%>
+            <%= recipe.category%>
         </h2>
         <h2> Calories:
-            <%= myRecipe.calories%>
+            <%= recipe.calories%>
         </h2>
         <h2> Ingredients:
             <ul>
-                <% myRecipe.ingredients.forEach(function(ingredient){ %>
+                <% recipe.ingredients.forEach(function(ingredient){ %>
                     <li class="list-group-item">
                         <%= ingredient %>
                     </li>
@@ -33,36 +33,15 @@
         </h2>
         <h2> nutrients:
             <ul>
-                <% myRecipe.nutrients.forEach(function(nutrient){ %>
+                <% recipe.nutrients.forEach(function(nutrient){ %>
                     <li class="list-group-item">
                         <%= nutrient %>
                     </li>
                     <% }) %>
             </ul>
         </h2>
-        <% if(usersRecipe) { %>
-            <a href="/recipes/<%= myRecipe._id %>/edit">Edit your recipe</a>
-            <a href="/recipes/<%= myRecipe._id %>/delete">Delete your recipe</a>
-            <% } %>
-                <form method="POST" action="/recipes/<%= myRecipe._id %>/reviews">
-                    Rating: <input type="text" name="rating"> Review: <input type="text" name="body">
-                    <input type="submit" value="Submit this rating">
-                </form>
-                <% for(let i=0; i < recipeReviews.length; i++) { %>
-                    <h3>Rating:
-                        <%= recipeReviews[i].rating %>
-                    </h3>
-                    <p>Comment:
-                        <%= recipeReviews[i].body %>
-                    </p>
-                    <p>Rating given by:
-                        <%= recipeReviewUsers[i] %>
-                    </p>
-                    <hr>
-                    <% } %>
+     
                         <%- include('../partials/footer.ejs') %>
     </body>
-
-</html>
 
 </html>
