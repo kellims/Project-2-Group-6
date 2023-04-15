@@ -108,7 +108,7 @@ router.post('', async (req, res, next) => {
 //Edit route w/ redirect to updated show page
 router.get('/:id/edit', async (req, res, next) => {
     try {
-        const recipeToEdit = await recipe.findById(req.params.id);
+        const recipeToEdit = await recipes.findById(req.params.id);
         res.render('recipes/edit.ejs', {recipe: recipeToEdit})
     } catch(err) {
         console.log(err);
@@ -117,7 +117,7 @@ router.get('/:id/edit', async (req, res, next) => {
 });
 router.put('/:id', async (req, res, next) => {
     try {
-        const updatedRecipe = await recipe.findByIdAndUpdate(req.params.id, req.body);
+        const updatedRecipe = await recipes.findByIdAndUpdate(req.params.id, req.body);
         res.redirect(`/recipes/${req.params.id}`)
     } catch(err) {
         console.log(err);
@@ -128,7 +128,7 @@ router.put('/:id', async (req, res, next) => {
 
 router.get('/:id/delete', async (req, res, next) => {
     try {
-        const recipeToBeDeleted = await recipe.findById(req.params.id);
+        const recipeToBeDeleted = await recipes.findById(req.params.id);
         res.render('recipes/delete.ejs', {recipe: recipeToBeDeleted})
     } catch(err) {
         console.log(err);
@@ -138,7 +138,7 @@ router.get('/:id/delete', async (req, res, next) => {
 
 router.delete('/:id', async (req, res) => {
     try {
-        const deletedRecipe = await recipe.findByIdAndDelete(req.params.id);
+        const deletedRecipe = await recipes.findByIdAndDelete(req.params.id);
         res.redirect('/recipe');
     } catch(err) {
         console.log(err);
