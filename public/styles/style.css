@@ -612,3 +612,8 @@ input[type="submit"]:hover {
   padding: 10px 10px 10px 10px; 
   margin: 20px auto;
 } 
+
+#form-part {
+  margin-right: 175px;
+  flex-direction: row;
+}
