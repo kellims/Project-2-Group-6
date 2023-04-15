@@ -34,6 +34,8 @@ Founded in 2023 by a group of food enthusiasts: Mustafa Cevik, Dolores Crazover 
 - Create a list of favorite recipes
 - Save recipes to your favorites list
 - Leave comments on recipes (option: see with the group)
+- Know more about the founders
+
 
 
 ##### Technologies
