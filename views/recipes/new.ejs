@@ -9,7 +9,7 @@
         <section id="newpage">
             <main>
                 <h1 id="main-heading-new-page">Add a new recipe to your list!</h1>
-                <form id="newpage" action="/recipes" method="POST">
+                <form id="newpage" method="POST" action="/recipe">
                     <label for="image">Image URL:</label>
                     <input  type="text" name="image" placeholder="Select an image for your recipe." class="input-text">
                     
@@ -19,8 +19,8 @@
                     <label for="nutrients">Nutrients:</label>
                     <input type="text" name="nutrients" placeholder="Nutrients of the recipe." class="input-text">
                     <br>
-                    <label for="cuisineType">Cuisine Type:</label>
-                    <input  type="text" name="cuisine type" placeholder="Cuisine Type (e.g. American, French...)" class="input-text">
+                    <label for="category">Category:</label>
+                    <input  type="text" name="category" placeholder="Category (e.g. American, French...)" class="input-text">
                     <br>
                     <label for="calories">Calories:</label>
                     <input type="text" name="calories" placeholder="Add the calories." class="input-text">
