@@ -1,72 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/header.ejs', {name: "Best Recipes" }) %>
+<%- include('../partials/head.ejs', { title: "Best Recipes" }) %>
 
     <body>
-
-        <div class="row recipe-hero py-4 mb-4">
-            <div class="col-lg-6 order-lg-last">
-                <img src="/images/image_homepage.png" class="img-fluid" alt="Kitchen Connect">
+        <%- include('../partials/header.ejs') %>
+            <div class="recipe-index-page-image">
+                <img id="image-recipes" src="/images/image_homepage.png" alt="Kitchen Connect"
+                    class="recipe-index-page-image">
             </div>
-            <div class="col-lg-6">
-                <h1 class="recipe-title mb-3">Discover new flavors with our wide range of recipes!</h1>
-                <p class="recipe-subtitle">Welcome to our recipe website, where you can find a vast collection of
+
+            <div class="recipe-hero">
+                <h1 class="recipe-hero-title">Discover new flavors with our wide range of recipes!</h1>
+                <p class="recipe-hero-subtitle">Welcome to our recipe website, where you can find a vast collection of
                     delicious and easy-to-follow recipes.</p>
             </div>
-        </div>
-        <br>
-        <div class="addNewRecipe">
-            <form class="addNewRecipe" method="GET" action="/recipe/new">
-                <button  class="AddNewRecipe">Add New Recipe</button>
-            </form>
-
-
             <br>
-        <input type="text" id="searchText">
-        <a href="/recipe" id="link">
-            <button id="searchSubmit">Search Your Favorite Recipes By Name</button>
-
-        </a>
-
-        <h1> Best Recipes!</h1>
-
-        <!-- display 4 recipes on index page -->
-
-        <div class="element">
-            <img src="./images/image_index.jpeg" alt="meal with salmon">
-            <div class="flex-container">
-                <h1 class="title">This is a recipe</h1>
-                <a id=view-button href="#">View Recipe</a>
+            <br>
+            <div class="index__actions">
+                <a class="button" href="/recipe/new">Add New Recipe</a>
+                <input type="text " id="searchText " placeholder="Search by recipe name... ">
+                <br>
+                <a class="button" href=" /recipe " id="link ">
+                    <button>Search</button>
+                </a>
             </div>
-            <p class="element-data-1">Nutrients: Glucids, proteins, Fer</p>
-            <p class="element-data-2">Category: American</p>
-            <p class="element-data-3">Calories: 160</p>
-        </div>
+            <br>
+            <section>
 
 
-
-        <% for(let i=0; i < recipe.length ; i++) { %>
-            <a href='recipe/<%= recipe[i]._id %>'>
-                <h2>Title:
-                    <%= recipe[i].title %>
-                </h2>
-            </a>
-            <div class="recipe-image">
-                <img src=" <%=recipe[i].image %>" alt="" />
-            </div>
-            <h3>Calories:
-                <%= recipe[i].calories %>
-            </h3>
-            <h3>Nutrients:
-                <%= recipe[i].nutrients %>
-            </h3>
-
-            <hr>
-            <% } %>
-
-                <%- include('../partials/footer.ejs') %>
-                    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-                    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+                <!-- display recipes on index page -->
+                <div class="card-container">
+                    <% for(let i=0; i < recipe.length ; i+=2) { %>
+                        <div class="row">
+                            <% for(let j=i; j<i+2 && j < recipe.length; j++) { %>
+                                <div class="col-md-6">
+                                    <div class="recipe-card">
+                                        <div class="recipe-image">
+                                            <img src="<%=recipe[j].image %>" alt="<%=recipe[j].title %> image" />
+                                        </div>
+                                        <div class="recipe-details">
+                                            <h2 class="recipe-title">
+                                                <%= recipe[j].title %>
+                                            </h2>
+                                            <a class="view-button" href="recipe/<%= recipe[j]._id %>">View Recipe</a>
+                                            <ul class="recipe-info">
+                                                <li>Category:
+                                                    <%= recipe[j].category %>
+                                                </li>
+                                                <li>Calories:
+                                                    <%= recipe[j].calories %>
+                                                </li>
+                                                <li>Nutrients:
+                                                    <ul class="recipe-nutrients">
+                                                        <% recipe[j].nutrients.forEach(function(nutrient) { %>
+                                                            <li>
+                                                                <%= nutrient %>
+                                                            </li>
+                                                            <% }); %>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% } %>
+                        </div>
+                        <% } %>
+                </div>
+            </section>>
+            <%- include('../partials/footer.ejs') %>
     </body>
 
 </html>
