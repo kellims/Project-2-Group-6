@@ -478,8 +478,9 @@ form input {
 .newpage-container-image {
   display: flex;
   flex-direction: row;
-  margin-right: 28rem;
   justify-content: center;
+  margin-right: 28rem;
+  margin-left: 28rem;
   margin-top: 50px;
 }
 
