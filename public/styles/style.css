@@ -203,7 +203,9 @@ nav ul li a:hover::after {
   float: right;
   width: 50%;
   height: auto;
-  margin-left: 70rem;
+  align-self: auto;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: -100px;
   border-radius: 4px;
 }
