@@ -8,16 +8,16 @@ Founded in 2023 by a group of food enthusiasts: Mustafa Cevik, Dolores Crazover 
 
 ### How it works - User flow
 
-- 1 - User arrives at the RecipeHub homepage and is greeted with an introduction to the platform.
-- 2 - User is prompted to create an account in order to access all of the - features of RecipeHub.
-- 3 - User clicks on the "Create Account" button and is taken to a registration page where they input their name, email address, and password.
-- 4 - User clicks the "Register" button and is directed to a confirmation page that lets them know their account has been created.
-- 5 - User is automatically logged in to RecipeHub and can begin exploring the platform.
-- 6 - INDEX ROUTE + SEARCH FEATURE: User browses recipes by category or uses the search function to find a specific recipe.
-- 7 - SHOW ROUTE: User clicks on a recipe to view its details, including ingredients, instructions, cooking time, nutritional information, and user reviews.
-- 8 - User saves the recipe to their favorites list by clicking the "Save" button.
-- 9 - DELETE ROUTE: User can delete a recipe from their favorites list by clicking the "Delete" button next to the recipe.
-- 10 - NEW & EDIT ROUTES: User decides to contribute to the community by adding their own recipe, editing an existing recipe, or leaving a comment on a recipe they've tried.
+- 1. As a user, I want to be introduced to the KitchenConnect platform when I arrive at the homepage, because I want to learn about the platform and its features before I start exploring.
+- 2. As a user, I want to be prompted to create an account in order to access all of the features of KitchenConnect, because I want to be able to save my favorite recipes and contribute to the community.
+- 3. As a user, I want to be taken to a registration page when I click on the "Create Account" button, where I can input my name, email address, and password, because I want to create a secure account that protects my personal information.
+- 4. As a user, I want to be directed to a confirmation page that lets me know my account has been created, because I want to ensure that my account has been set up successfully.
+- 5. As a user, I want to be automatically logged in to KitchenConnect when my account is created, so that I can begin exploring the platform immediately.
+- 6. As a user, I want to be able to browse recipes by category or use the search function to find a specific recipe, because I want to be able to find the recipes that interest me quickly and easily.
+- 7. As a user, I want to be able to view the details of a recipe, including ingredients, instructions, cooking time, nutritional information, and user reviews, because I want to make informed decisions about which recipes to try.
+- 8. As a user, I want to be able to create recipes to the list of recipes by clicking the "Save" button, because I want to be able to quickly find and access the list of recipes.
+- 9. As a user, I want to be able to delete recipes from list of recipes by clicking the "Delete" button next to the recipe, because I want to be able to manage my list easily.
+- 10. As a user, I want to be able to contribute to the KitchenConnect community by adding my own recipe or editing an existing recipe I've tried because I want to share my own knowledge and experience with others on the platform.
 
 
 #### Features
