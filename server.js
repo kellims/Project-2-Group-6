@@ -19,6 +19,8 @@ app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
 // app.set("view options", { layout: true } );
 
+
+//Redirecting to homepage link for home page
 app.get('/', (req, res) => {
     res.redirect('/homepage');
 });
