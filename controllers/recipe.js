@@ -56,8 +56,16 @@ const seededRecipes = [
 //Homepage for recipes, links to /recipe
 router.get('/', async (req, res, next) => {
     try {
-        let myRecipes = await recipes.find({});
-        return res.render('recipes/index.ejs', {recipe: myRecipes});
+        console.log(req.query); //query for the search bar
+        let myRecipes;
+        if(req.query.s) {
+            myRecipes = await recipes.find({category:req.query.s}) //if ask for a recipe of this category find them
+            //console.log(myRecipes);
+        } else {
+            myRecipes = await recipes.find({}); // else find all the recipes
+        }
+        console.log(myRecipes);
+        res.render('recipes/index.ejs', {recipe: myRecipes});
     } catch(err){
         console.log(err);
         return next();
