@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs', { title: "Homepage | KitchenConnect"}) %>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <section class="hero">
+          <h1>Welcome to KitchenConnect</h1>
+          <p>Discover, create, and share delicious recipes from around the world.</p>
+          <a href="recipe/signup" class="cta-button">JOIN US TODAY!</a>
+          <img class="main-pic-hp" src="/images/image_homepage_2.jpeg" alt="Happy young woman making a salad at the kitchen">
+        </section>
+        
+
+        <div class="search-container">
+          <form class="search-form-hp" id="search-form">
+              <input type="text" placeholder="Search For Your Recipe...">
+              <ion-icon name="search-circle" class="search-icon"></ion-icon>
+          </form>
+        </section>
+
+        <section class="featured-recipes">
+          <h2>Featured Recipes</h2>
+          <div class="recipe-grid">
+            <!-- Recipe Card 1 -->
+            <a class="a-card-recipe" href="https://www.recipesfromitaly.com/penne-alla-vodka/"> 
+            <div class="recipe-card">
+              <img src="/images/image_test_homepage_card4.jpeg" alt="Classic Penne all Vodka. Italian ziti pasta covered in sauce garnished with a sprig of basil. White plate and napkin.">
+              <div class="recipe-info">
+                <h3>Classic Penne alla Vodka Pasta Dish</h3>
+                <p>Classic Italian ziti pasta covered in sauce garnished with a sprig of basil.</p>
+                
+              </div>
+            </div>
+            </a>
+          
+            <!-- Recipe Card 2 -->
+            <a class="a-card-recipe" href="https://thedefineddish.com/creamy-sun-dried-tomato-basil-chicken/"> 
+            <div class="recipe-card">
+              <img src="https://thedefineddish.com/wp-content/uploads/2023/02/Creamy-Sundried-Tomato-Basil-Chicken-1-scaled.jpg" alt="Classic Penne all Vodka. Italian ziti pasta covered in sauce garnished with a sprig of basil. White plate and napkin.">
+              <div class="recipe-info">
+                <h3>Creamy Sun Dried Tomato Basil Chicken</h3>
+                <p>This Creamy Sun Dried Tomato Basil Chicken is going to become a new favorite. </p>
+                
+              </div>
+            </div>
+            </a>
+          
+            <!-- Recipe Card 3 -->
+            <a class="a-card-recipe" href="https://www.halfbakedharvest.com/poblano-pineapple-shrimp-tacos/"> 
+            <div class="recipe-card">
+              <img src="https://www.halfbakedharvest.com/wp-content/uploads/2023/04/Quick-Poblano-Pineapple-Shrimp-Tacos-with-Cilantro-Jalapeno-Ranch-1.jpg" alt="Recipe image 3">
+              <div class="recipe-info">
+                <h3>Poblano Pineapple Shrimp Tacos</h3>
+                <p>Quick Poblano Pineapple Shrimp Tacos with Cilantro Jalapeño Ranch. </p>
+                
+              </div>
+            </div>
+            </a>
+          
+            <!-- Recipe Card 4 -->
+            <a class="a-card-recipe" href="https://www.tasteofhome.com/recipes/garlic-herbed-beef-tenderloin/"> 
+            <div class="recipe-card">
+              <img src="https://www.tasteofhome.com/wp-content/uploads/2018/01/Garlic-Herbed-Beef-Tenderloin_EXPS_ATBRS21_21171_E11_19_4b-9.jpg?fit=700,1024" alt="Classic Penne all Vodka. Italian ziti pasta covered in sauce garnished with a sprig of basil. White plate and napkin.">
+              <div class="recipe-info">
+                <h3>Easy Family-Style Garlic Herbed Beef Tenderloin</h3>
+                <p>The blending of rosemary, basil and garlic add flavor to the tenderloin.</p>
+                
+              </div>
+            </div>
+            </a>
+          </div>
+        </section>
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

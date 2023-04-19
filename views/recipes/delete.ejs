@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs', { title: "Delete Recipe | KitchenConnect" + recipe.title}) %>
+<body>
+    <%- include('../partials/header.ejs') %>
+
+    <main>
+        <section class="delete-section">
+          <div class="container">
+            <div class="top-delete text-center">
+              <h1>Delete Recipe</h1>
+              <p>Are you sure you want to delete the following recipe?</p>
+              <h2><%= recipe.title %></h2>
+            </div>
+  
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card mb-4">
+                  <img src="<%= recipe.image %>" class="card-img-top" alt="<%= recipe.title %>">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <%= recipe.title %>
+                    </h5>
+                    <p>Posted by: <%= recipe.author %></p>
+                    <p class="card-text">
+                      <%= recipe.instructions %>
+                    </p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Category:</strong> <%= recipe.category %></li>
+                    <li class="list-group-item"><strong>Cooking Time:</strong> <%= recipe.cookingTime %> minutes</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+  
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <h5 class="card-title">Ingredients</h5>
+                    <ul class="list-group">
+                      <% recipe.ingredients.forEach(function(ingredients, index){ %>
+                        <li class="list-group-item">
+                          <%= ingredients %>
+                        </li>
+                        <% }) %>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <h5 class="card-title">Nutrients</h5>
+                    <ul class="list-group">
+                      <% recipe.nutrients.forEach(function(nutrients, index){ %>
+                        <li class="list-group-item">
+                          <%= nutrients %>
+                        </li>
+                        <% }) %>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="button-delete-page">
+                <div class="delete-actions text-center">
+                <form class="delete-form" method="POST" action="/recipe/<%= recipe._id %>?_method=DELETE">
+                    <button type="submit" class="delete-btn">Yes, Delete</button>
+                </form>
+                <a href="/recipe/<%= recipe._id %>" class="cancel-btn btn">Cancel</a>
+                </div>
+                <div class="addNewRecipe-dlt-p-btn">
+                    <form class="addNewRecipe-delete-p-btn" method="GET" action="/recipe/new">
+                        <button  class="AddNewRecipe-delete-p-btn">Add New Recipe</button>
+                    </form>
+                </div>
+            </div>    
+          </div>
+        </section>
+      </main>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

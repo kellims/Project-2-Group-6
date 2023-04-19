@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs', {title:"Display details of the recipe"}) %>
+
+    <body>
+        <header>
+            <%- include('../partials/header.ejs') %>
+        </header>
+
+        <main class="container">
+            <div class="card">
+
+                <h1 class="card__title">
+                    <%= recipe.title %>
+                </h1>
+                <div class="card mb-6">
+                    <img src="<%= recipe.image %>" class="card-img-top" alt="<%= recipe.title %>">
+                </div>
+                <div class="card__author">
+                    Posted By:
+                    <%= recipe.author %>
+                </div>
+
+                <div class="card__body">
+                    <div class="card__instructions">
+                        <h2>Instructions</h2>
+                        <%= recipe.instructions %>
+                    </div>
+
+                    <div class="card__details">
+                        <h2>Details</h2>
+
+                        <ul>
+                            <li>
+                                <strong>Cooking Time:</strong>
+                                <%= recipe.cookingTime %> Minutes
+                            </li>
+                            <li>
+                                <strong>Category:</strong>
+                                <%= recipe.category %>
+                            </li>
+                            <li>
+                                <strong>Calories:</strong>
+                                <%= recipe.calories %>
+                            </li>
+                            <li>
+                                <strong>Ingredients:</strong>
+                                <ul class="list">
+                                    <% recipe.ingredients.forEach(function(ingredient){ %>
+                                        <li>
+                                            <%= ingredient %>
+                                        </li>
+                                        <% }) %>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Nutrients:</strong>
+                                <ul class="list">
+                                    <% recipe.nutrients.forEach(function(nutrient){ %>
+                                        <li>
+                                            <%= nutrient %>
+                                        </li>
+                                        <% }) %>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card__actions">
+                        <a class="button" href="/recipe/<%= recipe._id %>/edit">Edit this Recipe</a>
+                        <a class="button button--secondary" href="/recipe/<%= recipe._id %>/delete">Delete this Recipe</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <%- include('../partials/footer.ejs') %>
+        </footer>
+    </body>
+
+</html>
