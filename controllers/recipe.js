@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
-//I don't think we need the port in our controllers if we're already listening in the .env or server.js files?
-// const port = 4000;
 
-//does recipes need to be capitalized?
+
 let { recipes } = require('../models');
 
 const seededRecipes = [
@@ -55,7 +53,7 @@ const seededRecipes = [
 ]
 
 
-
+//Homepage for recipes, links to /recipe
 router.get('/', async (req, res, next) => {
     try {
         let myRecipes = await recipes.find({});
@@ -65,11 +63,13 @@ router.get('/', async (req, res, next) => {
         return next();
     }
 });
-//Add New Recipes (Need to decide on our /route for server.js. For now it's /recipe)
+
+//Add New Recipes 
 router.get('/new', (req, res) => {
     res.render('recipes/new.ejs')
 });
 
+//added Seed route
 router.get('/seed', async (req, res, next) => {
     try {
         await recipes.deleteMany({});
@@ -81,7 +81,7 @@ router.get('/seed', async (req, res, next) => {
     }
 })
 
-
+//Show page for each Recipe
 router.get("/:id", async (req, res, next) => {
     try {
         const myRecipe = await recipes.findById(req.params.id);

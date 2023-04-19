@@ -20,7 +20,7 @@ app.use(methodOverride('_method'));
 // app.set("view options", { layout: true } );
 
 app.get('/', (req, res) => {
-    res.send('Hello, world!');
+    res.redirect('/homepage');
 });
 
 app.get('/homepage', (req, res) => {
