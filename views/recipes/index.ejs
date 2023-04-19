@@ -2,30 +2,30 @@
 <html lang="en">
 <%- include('../partials/head.ejs', { title: "Best Recipes" }) %>
 
-    <body>
-        <%- include('../partials/header.ejs') %>
-            <div class="recipe-index-page-image">
-                <img id="image-recipes" src="/images/image_homepage.png" alt="Kitchen Connect"
-                    class="recipe-index-page-image">
-            </div>
+<body>
+    <%- include('../partials/header.ejs') %>
+        <div class="recipe-index-page-image">
+            <img id="image-recipes" src="/images/image_homepage.png" alt="Kitchen Connect"
+                class="recipe-index-page-image">
+        </div>
 
-            <div class="recipe-hero">
-                <h1 class="recipe-hero-title">Discover new flavors with our wide range of recipes!</h1>
-                <p class="recipe-hero-subtitle">Welcome to our recipe website, where you can find a vast collection of
-                    delicious and easy-to-follow recipes.</p>
-            </div>
+        <div class="recipe-hero">
+            <h1 class="recipe-hero-title">Discover new flavors with our wide range of recipes!</h1>
+            <p class="recipe-hero-subtitle">Welcome to our recipe website, where you can find a vast collection of
+                delicious and easy-to-follow recipes.</p>
+        </div>
+        <br>
+        <br>
+        <div class="index__actions">
+            <a class="button" href="/recipe/new">Add New Recipe</a>
+            <input type="text" id="searchText" placeholder="Search by category...">
             <br>
-            <br>
-            <div class="index__actions">
-                <a class="button" href="/recipe/new">Add New Recipe</a>
-                <input type="text " id="searchText " placeholder="Search by recipe name... ">
-                <br>
-                <a class="button" href=" /recipe " id="link ">
-                    <button>Search</button>
-                </a>
-            </div>
-            <br>
-            <section>
+            <a class="button" href="/recipe" id="link">
+                <button id="searchSubmit">Search</button>
+            </a> 
+        </div>
+        <br>
+        <section>
 
 
                 <!-- display recipes on index page -->

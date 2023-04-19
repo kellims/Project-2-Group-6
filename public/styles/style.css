@@ -299,12 +299,12 @@ nav ul li a:hover::after {
   margin-bottom: 1rem;
 }
 
-.a-signup {
+.a-havelook {
   color: black;
   text-decoration: underline;
 }
 
-.about-content .a-signup:hover {
+.about-content .a-havelook:hover {
   color: rgb(205, 5, 5);
 }
 
