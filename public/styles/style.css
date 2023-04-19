@@ -916,19 +916,23 @@ hr {
 
 #editpage {
   margin-top: -5rem;
-  margin-left: 10rem;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+#form-part {
+  margin-right: 810px;
+  flex-direction: row;
 }
 
 #my-edit-form {
   width: 160%;
   max-width: 1400px;
   padding: 10px 10px 10px 10px;
-  margin: 20px auto;
-}
-
-#form-part {
-  margin-right: 810px;
-  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
 }
 
 .input-container-save-edit-changes {
