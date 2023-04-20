@@ -59,11 +59,11 @@ router.get('/', async (req, res, next) => {
     try {
         //query for the search bar
         let myRecipes;
-        if(req.query.s) {
-            //if ask for a recipe of this category find them
+        if(req.query.s) { //checks if there is a query parameter called "s" in the req object
+            //queries the database to find all recipes that belong to the category specified in the "s" query 
             myRecipes = await recipes.find({category:req.query.s}) 
         } else {
-            // else find all the recipes
+            // else find all the recipes in the database
             myRecipes = await recipes.find({});
         }
         console.log(myRecipes);
