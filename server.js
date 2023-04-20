@@ -1,8 +1,4 @@
 //Dependencies
-
-//I think we'll need this as well below?
-//require('dotenv').config();
-
 const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
@@ -17,7 +13,7 @@ app.use(express.json()); // help to submit the data from page to page with form
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
-// app.set("view options", { layout: true } );
+
 
 
 //Redirecting to homepage link for home page
@@ -29,12 +25,17 @@ app.get('/homepage', (req, res) => {
     res.render('Info/homepage.ejs')
 });
 
+
+//About page route
 app.get('/about', (req, res) => {
     res.render('Info/about.ejs')
 });
 
+//Recipe route which connects to controllers/recipe.js
 app.use('/recipe', recipeController);
 
+
+//404 route
 app.get('*/', (req, res) => {
     res.render('./Info/404.ejs');
 });
