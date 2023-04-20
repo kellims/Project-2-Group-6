@@ -139,6 +139,7 @@ nav ul li a:hover::after {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 1rem;
 }
 
 .featured-recipes h2 {
@@ -578,9 +579,8 @@ input[type="submit"]:hover {
     margin-left: auto;
     margin-right: auto;
     width: 40%;
-    
-   
 }
+
 
 #image-recipes {
   width: 100%;
@@ -692,7 +692,6 @@ hr {
   border-top: 1px solid #ccc;
   margin: 50px 0;
 }
-
 
 /* Recipe styles */
 
