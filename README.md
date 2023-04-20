@@ -48,18 +48,16 @@ Founded in 2023 by a group of food enthusiasts: Mustafa Cevik, Dolores Crazover 
 - MongoDB
 - Mongoose
 
-####### ERD
+####### Screenshots
 
-![newErd](https://user-images.githubusercontent.com/117631390/231324864-aa2d1cf3-9c63-43dd-afee-c631ba0264de.png)
+Homepage
 
+![Screen Shot 2023-04-19 at 6 13 52 PM (1)](https://user-images.githubusercontent.com/117631390/233230822-9eda088d-bf17-481a-8604-ea218b17468c.png)
 
+About Page
 
-
-
-
-
-
-Screenshots
-
-
+![Screen Shot 2023-04-19 at 6 14 16 PM (1)](https://user-images.githubusercontent.com/117631390/233230881-05a04d41-b923-49b9-8b86-dd98cd6380cf.png)
  
+ Index Page
+
+![Screen Shot 2023-04-19 at 6 14 40 PM (1)](https://user-images.githubusercontent.com/117631390/233230930-f1276792-b01c-4f08-8bad-3c002b27191b.png)
