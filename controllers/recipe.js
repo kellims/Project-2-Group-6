@@ -4,6 +4,7 @@ const router = express.Router();
 
 let { recipes } = require('../models');
 
+//Added a seeded route, but not using for main project
 const seededRecipes = [
     {
         author: "Test One",
@@ -56,13 +57,14 @@ const seededRecipes = [
 //Homepage for recipes, links to /recipe
 router.get('/', async (req, res, next) => {
     try {
-        console.log(req.query); //query for the search bar
+        //query for the search bar
         let myRecipes;
         if(req.query.s) {
-            myRecipes = await recipes.find({category:req.query.s}) //if ask for a recipe of this category find them
-            //console.log(myRecipes);
+            //if ask for a recipe of this category find them
+            myRecipes = await recipes.find({category:req.query.s}) 
         } else {
-            myRecipes = await recipes.find({}); // else find all the recipes
+            // else find all the recipes
+            myRecipes = await recipes.find({});
         }
         console.log(myRecipes);
         res.render('recipes/index.ejs', {recipe: myRecipes});
@@ -87,7 +89,7 @@ router.get('/seed', async (req, res, next) => {
         console.log(err);
         next();
     }
-})
+});
 
 //Show page for each Recipe
 router.get("/:id", async (req, res, next) => {
@@ -123,6 +125,7 @@ router.get('/:id/edit', async (req, res, next) => {
         next()
     }
 });
+
 router.put('/:id', async (req, res, next) => {
     try {
         const updatedRecipe = await recipes.findByIdAndUpdate(req.params.id, req.body);
@@ -133,7 +136,7 @@ router.put('/:id', async (req, res, next) => {
     }
 });
 
-
+//Delete route for specific recipe from the show page
 router.get('/:id/delete', async (req, res, next) => {
     try {
         const recipeToBeDeleted = await recipes.findById(req.params.id);
@@ -142,7 +145,7 @@ router.get('/:id/delete', async (req, res, next) => {
         console.log(err);
         next();
     }
-})
+});
 
 router.delete('/:id', async (req, res) => {
     try {
@@ -152,7 +155,7 @@ router.delete('/:id', async (req, res) => {
         console.log(err);
         next();
     }
-})
+});
 
 
 
