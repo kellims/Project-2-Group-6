@@ -13,15 +13,15 @@ const recipeSchema = new mongoose.Schema({
         required: [true, 'Recipe name is required!'],
     },
     ingredients: {
-        type: Array, // array feature 
+        type: Array, 
         required: true
     },
     nutrients: {
-        type: Array, // array feature 
+        type: Array, 
         required: true
     },
     cookingTime: {
-        type: String, //number feature
+        type: String, 
         trim: true,
     },
     instructions: {

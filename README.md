@@ -25,16 +25,10 @@ Founded in 2023 by a group of food enthusiasts: Mustafa Cevik, Dolores Crazover 
 - Homepage
 - About Page : Read to learn more about the platform and the founders
 - Add new recipes
-- Edit Recipies
-- Delete Recipies
+- Edit Recipes
+- Delete Recipes
 - Browse recipes by category
-- View recipe details, including ingredients, instructions, cooking time, nutritional information, and user reviews
-- Seach for specific recipes using keywords or ingredients
-- Create a user profile
-- Create a list of favorite recipes
-- Save recipes to your favorites list
-- Leave comments on recipes (option: see with the group)
-- Know more about the founders
+- View recipe details, including picture, author, nutrients, instructions, cooking time, calories, and category (origin).
 
 
 ###### Technologies
