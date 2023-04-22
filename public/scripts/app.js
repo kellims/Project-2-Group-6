@@ -7,10 +7,10 @@ console.log(link);
 
 // Listen to changes to the input value
 input.addEventListener("change", () => {
-    link.href = `/recipe?s=${input.value}`//set the href attribute of the link elemnent to a URL that includes the value of the input element so that when the link is cliked it take the user to the corresponding recipe
+    link.href = `/recipe?s=${input.value}`//set the href attribute of the link element to a URL that includes the value of the input element so that when the link is cliked it take the user to the corresponding recipe
 })
 
-// add eventLstener to the body for a keydown -  see if the key is "Enter"
+// add eventListener to the body for a keydown -  see if the key is "Enter"
 document.querySelector('body').addEventListener('keydown', (e) => {
     if(e.key === "Enter") {
         link.href = `/recipe?s=${input.value}`
